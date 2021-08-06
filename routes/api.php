@@ -16,17 +16,16 @@ use App\Http\Controllers\UserController;
 |
 */
 
-//$2y$10$QvckIX.s6fJ36nnHE4FgeuEy/9m2OxGiXYyFB6aD1ThtvBsqlLpKW
 
 Route::prefix('user')->group(function () {
 
-    Route::get('/allUsers', [UserController::class, 'getAll']);
+    Route::get('/allUsers', [UserController::class, 'getAll'])->name('Users');
 
-    Route::get('/{id}', [UserController::class, 'read']);
+    Route::get('/{id}', [UserController::class, 'read'])->name('User');
 
-    Route::post('/newUser', [UserController::class, 'create']);
+    Route::post('/newUser', [UserController::class, 'create'])->name('New User');
 
-    Route::put('/updateUser/{id}', [UserController::class, 'update']);
+    Route::put('/updateUser/{id}', [UserController::class, 'update'])->name('Update User');
 
-    Route::delete('/deleteUser/{id}', [UserController::class, 'delete']);
+    Route::delete('/deleteUser/{id}', [UserController::class, 'delete'])->name('Delete user');
 });
